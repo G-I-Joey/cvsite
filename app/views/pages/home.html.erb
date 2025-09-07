@@ -2,7 +2,7 @@
 <h2>Développeur d’applications Fullstack</h2>
 
 <section>
-  <h3>Expériences</h3>
+  <h3>Mes Expériences</h3>
   <% @experiences.each do |exp| %>
     <div>
       <h4><%= exp.title %> - <%= exp.company %></h4>
@@ -22,6 +22,30 @@
         <p><a href="<%= project.link %>" target="_blank">Voir le projet</a></p>
       <% end %>
       <p><em><%= project.start_date %> - <%= project.end_date || "En cours" %></em></p>
+    </div>
+  <% end %>
+</section>
+
+<section>
+  <h3>Compétences</h3>
+  <% @skills.each do |skills| %>
+    <ul>
+      <% skills.each do |skill| %>
+        <li><%= skill.name %> (<%= skill.level %>)</li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
+
+
+<section>
+  <h3>Formations</h3>
+  <% @educations.each do |edu| %>
+    <div>
+      <h4><%= edu.degree %> - <%= edu.field %></h4>
+      <p><strong><%= edu.school %></strong></p>
+      <p><%= edu.description %></p>
+      <p><em><%= edu.start_date %> - <%= edu.end_date %></em></p>
     </div>
   <% end %>
 </section>
