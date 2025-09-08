@@ -19,7 +19,7 @@
       <h4><%= project.title %></h4>
       <p><%= project.description %></p>
       <% if project.link.present? %>
-        <p><a href="<%= project.link %>" target="_blank">Voir le projet</a></p>
+        <p><a href="<%= project.link %>" target="_blank">Lien vers le projet</a></p>
       <% end %>
       <p><em><%= project.start_date %> - <%= project.end_date || "En cours" %></em></p>
     </div>
@@ -28,15 +28,12 @@
 
 <section>
   <h3>Compétences</h3>
-  <% @skills.each do |skills| %>
-    <ul>
-      <% skills.each do |skill| %>
-        <li><%= skill.name %> (<%= skill.level %>)</li>
-      <% end %>
-    </ul>
-  <% end %>
+  <ul>
+    <% @skills.each do |skill| %>
+      <li><%= skill.name %> (<%= skill.level %>)</li>
+    <% end %>
+  </ul>
 </section>
-
 
 <section>
   <h3>Formations</h3>
