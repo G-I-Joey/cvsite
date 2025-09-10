@@ -29,15 +29,43 @@ puts "Diplômes créés."
 
 puts "Création des compétences..."
 skills = [
-  { name: "Travailler en équipe", level: "Avancé" },
-  { name: "Faire preuve de curiosité", level: "Avancé" },
-  { name: "HTML", level: "Intermédiaire" },
-  { name: "CSS", level: "Intermédiaire" },
-  { name: "Ruby on Rails", level: "Intermédiaire" },
-  { name: "Stimulus JS", level: "Débutant" },
-  { name: "JavaScript", level: "Débutant" },
+  # Soft skills
+  { name: "Travail en équipe", level: "Avancé" },
+  { name: "Curiosité et apprentissage continu", level: "Avancé" },
+  { name: "Persévérance face aux défis", level: "Avancé" },
+  { name: "Communication claire", level: "Intermédiaire" },
+  { name: "Méthodologie Agile (Scrum, Kanban)", level: "Débutant" },
+
+  # Front-end
+  { name: "HTML5", level: "Intermédiaire" },
+  { name: "CSS3 / Responsive Design", level: "Intermédiaire" },
+  { name: "JavaScript", level: "Intermédiaire" },
+  { name: "React", level: "Débutant" },
+  { name: "React Router", level: "Débutant" },
+  { name: "Accessibilité web (WCAG / ARIA)", level: "Débutant" },
+
+  # Back-end
+  { name: "PHP", level: "débutant" },
+  { name: "Programmation Orientée Objet (POO)", level: "Intermédiaire" },
+  { name: "Architecture MVC", level: "Débutant" },
+  { name: "APIs REST", level: "Débutant" },
+  { name: "Authentification & sessions", level: "Débutant" },
+
+  # Base de données
+  { name: "MySQL", level: "Intermédiaire" },
   { name: "PostgreSQL", level: "Intermédiaire" },
-  { name: "Git / GitHub", level: "Intermédiaire" }
+  { name: "Modélisation BDD", level: "Intermédiaire" },
+
+  # Outils
+  { name: "Git / GitHub (avancé)", level: "Intermédiaire" },
+  { name: "Figma (prototypage)", level: "Intermédiaire" },
+  { name: "Heroku / Déploiement cloud", level: "Intermédiaire" },
+  { name: "Docker (bases)", level: "Débutant" },
+
+  # Qualité / Tests
+  { name: "Tests unitaires", level: "Débutant" },
+  { name: "Debugging", level: "Intermédiaire" },
+  { name: "Documentation technique", level: "Débutant" }
 ]
 
 skills.each do |attrs|

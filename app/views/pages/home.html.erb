@@ -1,48 +1,71 @@
-<h1>Joey Collier</h1>
-<h2>Développeur d’applications Fullstack</h2>
+<div class="container">
+  <!-- Colonne gauche -->
+  <aside class="left">
+    <section>
+      <h3>Compétences</h3>
+      <div class="skills-carousel">
+        <% @skills.each do |skill| %>
+          <div class="skill-card">
+            <p><%= skill.name %></p>
+            <small><%= skill.level %></small>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </aside>
 
-<section>
-  <h3>Mes Expériences</h3>
-  <% @experiences.each do |exp| %>
-    <div>
-      <h4><%= exp.title %> - <%= exp.company %></h4>
-      <p><%= exp.description %></p>
-      <p><em><%= exp.start_date %> - <%= exp.end_date || "Aujourd’hui" %></em></p>
-    </div>
-  <% end %>
-</section>
+  <!-- Colonne centrale -->
+  <main class="center">
+    <h1>Joey Collier</h1>
+    <h2>Développeur d’applications Fullstack</h2>
 
-<section>
-  <h3>Mes projets</h3>
-  <% @projects.each do |project| %>
-    <div style="margin-bottom:20px;">
-      <h4><%= project.title %></h4>
-      <p><%= project.description %></p>
-      <% if project.link.present? %>
-        <p><a href="<%= project.link %>" target="_blank">Lien vers le projet</a></p>
+    <section class="about">
+      <p>
+        Passionné par le développement web, je suis en formation pour devenir
+        Développeur Fullstack. Curieux, persévérant et motivé, je cherche à
+        mettre en pratique mes compétences à travers des projets concrets et
+        utiles.
+      </p>
+    </section>
+
+    <section class="projects">
+      <h3>Mes projets</h3>
+      <% @projects.each do |project| %>
+        <div class="project-card">
+          <h4><%= project.title %></h4>
+          <p><%= project.description %></p>
+          <% if project.link.present? %>
+            <p><a href="<%= project.link %>" target="_blank">Voir le projet</a></p>
+          <% end %>
+          <p><em><%= project.start_date %> - <%= project.end_date || "En cours" %></em></p>
+        </div>
       <% end %>
-      <p><em><%= project.start_date %> - <%= project.end_date || "En cours" %></em></p>
-    </div>
-  <% end %>
-</section>
+    </section>
+  </main>
 
-<section>
-  <h3>Compétences</h3>
-  <ul>
-    <% @skills.each do |skill| %>
-      <li><%= skill.name %> (<%= skill.level %>)</li>
-    <% end %>
-  </ul>
-</section>
+  <!-- Colonne droite -->
+  <aside class="right">
+    <section class="experiences">
+      <h3>Expériences professionnelles</h3>
+      <% @experiences.each do |exp| %>
+        <div class="experience-card">
+          <h4><%= exp.title %> - <%= exp.company %></h4>
+          <p><%= exp.description %></p>
+          <p><em><%= exp.start_date %> - <%= exp.end_date || "Aujourd’hui" %></em></p>
+        </div>
+      <% end %>
+    </section>
 
-<section>
-  <h3>Formations</h3>
-  <% @educations.each do |edu| %>
-    <div>
-      <h4><%= edu.degree %> - <%= edu.field %></h4>
-      <p><strong><%= edu.school %></strong></p>
-      <p><%= edu.description %></p>
-      <p><em><%= edu.start_date %> - <%= edu.end_date %></em></p>
-    </div>
-  <% end %>
-</section>
+    <section class="education">
+      <h3>Formations</h3>
+      <% @educations.each do |edu| %>
+        <div class="education-card">
+          <h4><%= edu.degree %> - <%= edu.field %></h4>
+          <p><strong><%= edu.school %></strong></p>
+          <p><%= edu.description %></p>
+          <p><em><%= edu.start_date %> - <%= edu.end_date %></em></p>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+</div>
