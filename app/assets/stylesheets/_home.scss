@@ -1,3 +1,111 @@
+// === Layout principal ===
 .homepage {
-  border: black 1px solid;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; // 3 colonnes
+  gap: 20px;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); // fond pro & original
+  color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+
+  h1, h2, h3 {
+    margin-bottom: 15px;
+  }
+
+  a {
+    color: #00e6e6;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// === Colonne gauche (skills) ===
+.skills-carousel {
+  max-height: 80vh; // limite la hauteur
+  overflow-y: auto; // scroll vertical
+  padding-right: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  // custom scrollbar
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #00e6e6;
+    border-radius: 3px;
+  }
+}
+
+.skill-card {
+  padding: 10px;
+  border: 1px solid #00e6e6;
+  border-radius: 8px;
+  background: rgba(0, 230, 230, 0.1);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+    background: rgba(0, 230, 230, 0.2);
+  }
+
+  p {
+    margin: 0;
+    font-weight: bold;
+  }
+  small {
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+}
+
+// === Colonne centrale (identité + projets) ===
+.center {
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #00e6e6;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+
+  .about {
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .project-card {
+    margin: 15px 0;
+    padding: 15px;
+    border-left: 3px solid #00e6e6;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    text-align: left;
+  }
+}
+
+// === Colonne droite (expériences + formations) ===
+.experiences, .education {
+  margin-top: 20px;
+
+  .experience-card, .education-card {
+    margin: 15px 0;
+    padding: 15px;
+    border-left: 3px solid #00e6e6;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+  }
 }
